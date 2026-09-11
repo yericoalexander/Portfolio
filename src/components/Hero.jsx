@@ -60,7 +60,7 @@ export default function Hero({ onNavigate }) {
                 className="hero-image-img" 
                 alt={personalInfo.name} 
                 src={personalInfo.avatar} 
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
               <p className="hero-image-caption">{personalInfo.avatarCaption}</p>
