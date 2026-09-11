@@ -56,13 +56,19 @@ export default function Hero({ onNavigate }) {
           <div className="hero-image-wrapper">
             <div className="hero-image-frame" />
             <div className="hero-image-img-wrap">
-              <img className="hero-image-img" alt={personalInfo.name} src={personalInfo.avatar} />
+              <img 
+                className="hero-image-img" 
+                alt={personalInfo.name} 
+                src={personalInfo.avatar} 
+                fetchpriority="high"
+                decoding="async"
+              />
               <p className="hero-image-caption">{personalInfo.avatarCaption}</p>
             </div>
-            <img className="hero-sticker hero-sticker-tl" alt="" src="/props/left-bubble.webp" />
-            <img className="hero-sticker hero-sticker-tr" alt="" src="/props/right-bubble.webp" />
-            <img className="hero-sticker hero-sticker-bl" alt="" src="/props/memoji.webp" />
-            <img className="hero-sticker hero-sticker-br" alt="" src="/props/smiley.webp" />
+            <img className="hero-sticker hero-sticker-tl" alt="" src="/props/left-bubble.webp" loading="lazy" decoding="async" />
+            <img className="hero-sticker hero-sticker-tr" alt="" src="/props/right-bubble.webp" loading="lazy" decoding="async" />
+            <img className="hero-sticker hero-sticker-bl" alt="" src="/props/memoji.webp" loading="lazy" decoding="async" />
+            <img className="hero-sticker hero-sticker-br" alt="" src="/props/smiley.webp" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

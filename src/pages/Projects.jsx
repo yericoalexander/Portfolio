@@ -30,6 +30,7 @@ export default function Projects({ onNavigate }) {
                   src={project.banner} 
                   alt={`${project.title} banner`} 
                   loading="lazy" 
+                  decoding="async"
                 />
               </button>
 

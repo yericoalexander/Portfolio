@@ -61,6 +61,7 @@ export default function ProjectDetails({ slug, onNavigate }) {
               src={project.banner} 
               alt={`${project.title} banner`} 
               loading="lazy" 
+              decoding="async"
             />
           </div>
 
@@ -122,6 +123,7 @@ export default function ProjectDetails({ slug, onNavigate }) {
                 src={project.preview.logo} 
                 alt={`${project.title} logo`} 
                 loading="lazy" 
+                decoding="async"
               />
             </div>
           </div>
@@ -145,7 +147,12 @@ export default function ProjectDetails({ slug, onNavigate }) {
                   onClick={() => setActivePhoto(imgSrc)}
                   aria-label="Open screenshot"
                 >
-                  <img src={imgSrc} alt={`${project.title} screenshot ${idx + 1}`} loading="lazy" />
+                  <img 
+                    src={imgSrc} 
+                    alt={`${project.title} screenshot ${idx + 1}`} 
+                    loading="lazy" 
+                    decoding="async"
+                  />
                 </button>
               ))}
             </div>
@@ -173,7 +180,12 @@ export default function ProjectDetails({ slug, onNavigate }) {
             >
               ×
             </button>
-            <img className="gallery-page-image" src={activePhoto} alt={`${project.title} screenshot`} />
+            <img 
+              className="gallery-page-image" 
+              src={activePhoto} 
+              alt={`${project.title} screenshot`} 
+              decoding="async"
+            />
             <p className="gallery-page-caption">{project.title}</p>
           </div>
         </div>,

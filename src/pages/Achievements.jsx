@@ -207,7 +207,7 @@ function ScrapbookLightbox({ item, onClose, onPrev, onNext, hasPrev, hasNext }) 
             </button>
           )}
 
-          <img className="scrapbook-lightbox-image" src={item.src} alt={item.alt} />
+          <img className="scrapbook-lightbox-image" src={item.src} alt={item.alt} decoding="async" />
           {item.caption && (
             <figcaption className="scrapbook-lightbox-caption">{item.caption}</figcaption>
           )}
