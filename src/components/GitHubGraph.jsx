@@ -69,29 +69,49 @@ export default function GitHubGraph() {
 
   useEffect(() => {
     let isCancelled = false;
-    const apiUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
 
-    fetch(apiUrl)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch contributions');
-        return res.json();
-      })
-      .then((data) => {
-        if (isCancelled) return;
-
-        const map = {};
-        for (const item of data.contributions ?? []) {
-          map[item.date] = { count: item.count, level: item.level };
+    async function loadContributions() {
+      // 1. Try real-time API endpoint (direct from GitHub without CDN stale cache)
+      try {
+        const res = await fetch(`/api/contributions?username=${username}&_t=${Date.now()}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (!isCancelled && data && Array.isArray(data.contributions)) {
+            const map = {};
+            for (const item of data.contributions) {
+              map[item.date] = { count: item.count, level: item.level };
+            }
+            setTotalCount(data.total);
+            setWeeksGrid(buildWeeksGrid(map));
+            return;
+          }
         }
+      } catch {
+        // Fallback to secondary source if /api is not reachable
+      }
 
-        setTotalCount(data.total?.lastYear ?? null);
-        setWeeksGrid(buildWeeksGrid(map));
-      })
-      .catch(() => {
+      // 2. Fallback to public contributions proxy
+      try {
+        const apiUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
+        const res = await fetch(apiUrl);
+        if (!res.ok) throw new Error('Failed to fetch contributions');
+        const data = await res.json();
+        if (!isCancelled) {
+          const map = {};
+          for (const item of data.contributions ?? []) {
+            map[item.date] = { count: item.count, level: item.level };
+          }
+          setTotalCount(data.total?.lastYear ?? null);
+          setWeeksGrid(buildWeeksGrid(map));
+        }
+      } catch {
         if (!isCancelled) {
           setHasError(true);
         }
-      });
+      }
+    }
+
+    loadContributions();
 
     return () => {
       isCancelled = true;
