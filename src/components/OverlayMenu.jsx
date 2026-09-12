@@ -7,10 +7,8 @@ const navItems = [
   { id: 'contact', label: 'Contact' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'achievements', label: 'Achievements' },
   { id: 'education', label: 'Education' },
-  { id: 'stack', label: 'Stack' },
-  { id: 'gallery', label: 'Gallery' }
+  { id: 'stack', label: 'Stack' }
 ];
 
 function NavIcon({ id }) {
@@ -48,12 +46,6 @@ function NavIcon({ id }) {
           <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
         </>
       )}
-      {id === 'achievements' && (
-        <>
-          <circle cx="12" cy="8" r="6" />
-          <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
-        </>
-      )}
       {id === 'education' && (
         <>
           <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -62,13 +54,6 @@ function NavIcon({ id }) {
       )}
       {id === 'stack' && (
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      )}
-      {id === 'gallery' && (
-        <>
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </>
       )}
     </svg>
   );

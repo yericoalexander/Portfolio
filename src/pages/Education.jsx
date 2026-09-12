@@ -170,7 +170,7 @@ export default function Education({ fullPage = false, onNavigate }) {
         <div className="section-inner">
           <div className="section-header">
             <div className="section-header-top">
-              <p className="section-marker">05 — education &amp; leadership</p>
+              <p className="section-marker">04 — education &amp; leadership</p>
               <button 
                 type="button" 
                 className="section-header-link" 

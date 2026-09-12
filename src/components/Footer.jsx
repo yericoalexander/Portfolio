@@ -59,8 +59,8 @@ export default function Footer({ onNavigate }) {
               </a>
             </li>
             <li>
-              <a className="footer-link" href="/achievements" onClick={(e) => handleNav(e, 'achievements')}>
-                Achievements<span className="footer-link-arrow" aria-hidden="true">→</span>
+              <a className="footer-link" href="/stack" onClick={(e) => handleNav(e, 'stack')}>
+                Stack<span className="footer-link-arrow" aria-hidden="true">→</span>
               </a>
             </li>
             <li>

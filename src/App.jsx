@@ -10,10 +10,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Projects = lazy(() => import('./pages/Projects'));
 const ProjectDetails = lazy(() => import('./pages/ProjectDetails'));
 const Experience = lazy(() => import('./pages/Experience'));
-const Achievements = lazy(() => import('./pages/Achievements'));
 const Education = lazy(() => import('./pages/Education'));
 const Stack = lazy(() => import('./pages/Stack'));
-const Gallery = lazy(() => import('./pages/Gallery'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 
 const VALID_PAGES = [
@@ -21,10 +19,8 @@ const VALID_PAGES = [
   'contact',
   'projects',
   'experience',
-  'achievements',
   'education',
   'stack',
-  'gallery',
   'blogs'
 ];
 
@@ -104,14 +100,10 @@ export default function App() {
         return <Projects onNavigate={handleNavigate} />;
       case 'experience':
         return <Experience fullPage={true} onNavigate={handleNavigate} />;
-      case 'achievements':
-        return <Achievements fullPage={true} onNavigate={handleNavigate} />;
       case 'education':
         return <Education fullPage={true} onNavigate={handleNavigate} />;
       case 'stack':
         return <Stack fullPage={true} onNavigate={handleNavigate} />;
-      case 'gallery':
-        return <Gallery onNavigate={handleNavigate} />;
       case 'blogs':
         return <Blogs onNavigate={handleNavigate} />;
       default:

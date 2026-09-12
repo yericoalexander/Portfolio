@@ -90,7 +90,7 @@ export default function Stack({ fullPage = false, onNavigate }) {
         <div className="section-inner">
           <div className="section-header">
             <div className="section-header-top">
-              <p className="section-marker">04 — stack</p>
+              <p className="section-marker">03 — stack</p>
               <button 
                 type="button" 
                 className="section-header-link" 
