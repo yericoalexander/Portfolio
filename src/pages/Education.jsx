@@ -26,8 +26,8 @@ function CampusEduCard({ education, photo, variant = 'secondary' }) {
       }}
     >
       <motion.figure className="campus-edu-photo" variants={itemVariants}>
-        <div className="campus-photo-frame">
-          <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+        <div className="campus-photo-frame campus-logo-frame">
+          <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" className="campus-logo-img" />
         </div>
         {photo.caption && (
           <figcaption className="campus-photo-caption">{photo.caption}</figcaption>
@@ -69,7 +69,7 @@ function CampusEduCard({ education, photo, variant = 'secondary' }) {
   );
 }
 
-function CampusLeadCard({ role, photo, index, total }) {
+function CampusLeadCard({ role, index, total }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const lines = role.description.split('\n').filter(Boolean);
   const [intro, ...details] = lines;
@@ -77,33 +77,42 @@ function CampusLeadCard({ role, photo, index, total }) {
 
   return (
     <motion.article 
-      className="campus-lead"
+      className="campus-lead campus-lead--card"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } }
+        visible: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } }
       }}
     >
-      <motion.figure className="campus-lead-photo" variants={itemVariants}>
-        <div className="campus-photo-frame">
-          <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
-        </div>
-        {photo.caption && (
-          <figcaption className="campus-photo-caption">{photo.caption}</figcaption>
-        )}
-      </motion.figure>
-
-      <div className="campus-lead-copy">
-        <motion.div className="campus-label-row" variants={itemVariants}>
-          <span className="campus-chapter" aria-hidden="true">
-            chapter {chapterNumber} / {String(total).padStart(2, '0')}
+      <div className="campus-lead-header">
+        <div className="campus-lead-meta">
+          <span className="campus-lead-icon" aria-hidden="true">
+            {index === 0 ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            )}
           </span>
-          <span className="campus-dot" aria-hidden="true" />
-          <span className="campus-label">{role.year}</span>
-        </motion.div>
+          <div className="campus-label-row" style={{ marginBottom: 0 }}>
+            <span className="campus-chapter" aria-hidden="true">
+              chapter {chapterNumber} / {String(total).padStart(2, '0')}
+            </span>
+            <span className="campus-dot" aria-hidden="true" />
+            <span className="campus-label">{role.year}</span>
+          </div>
+        </div>
+      </div>
 
+      <div className="campus-lead-main">
         <motion.h3 className="campus-role" variants={itemVariants}>
           {role.degree}
         </motion.h3>
@@ -118,6 +127,14 @@ function CampusLeadCard({ role, photo, index, total }) {
           </motion.p>
         )}
 
+        {role.highlights && role.highlights.length > 0 && (
+          <motion.div className="campus-tags" variants={itemVariants}>
+            {role.highlights.map((tag) => (
+              <span key={tag} className="campus-tag">{tag}</span>
+            ))}
+          </motion.div>
+        )}
+
         <AnimatePresence initial={false}>
           {isExpanded && (
             <motion.div 
@@ -125,22 +142,14 @@ function CampusLeadCard({ role, photo, index, total }) {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               {details.length > 0 && (
-                <ul className="campus-lead-list">
+                <ul className="campus-lead-list" style={{ marginTop: '1rem' }}>
                   {details.map((detail, idx) => (
                     <li key={idx} className="campus-lead-item">{detail}</li>
                   ))}
                 </ul>
-              )}
-
-              {role.highlights && role.highlights.length > 0 && (
-                <div className="campus-tags" style={{ marginTop: '0.75rem' }}>
-                  {role.highlights.map((tag) => (
-                    <span key={tag} className="campus-tag">{tag}</span>
-                  ))}
-                </div>
               )}
             </motion.div>
           )}
@@ -258,12 +267,11 @@ export default function Education({ fullPage = false, onNavigate }) {
             </div>
           </div>
 
-          <div className="campus-lead-list">
+          <div className="campus-leadership-grid">
             {leadershipList.map((lead, idx) => (
               <CampusLeadCard 
                 key={lead.degree + idx}
                 role={lead}
-                photo={idx === 0 ? campusPhotos.leadership1 : campusPhotos.leadership2}
                 index={idx}
                 total={leadershipList.length}
               />

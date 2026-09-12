@@ -355,7 +355,7 @@ Focused on building reliable cloud infrastructure and intuitive user interfaces.
   },
   {
     degree: "Computer & Network Engineering",
-    school: "Vocational High School",
+    school: "SMK Telkom Purwokerto",
     year: "2022 — 2025",
     description: `Specialized in Network Infrastructure, System Administration, and Web Programming.
 Hands-on experience in Linux server management, routing, and scripting.`,
@@ -384,10 +384,16 @@ Organized internal code jams and guided competitive programming teams.`,
 ];
 
 export const campusPhotos = {
-  primary: { src: "/img/edu-pup.webp", alt: "Telkom University Purwokerto Campus", caption: "Telkom University · Purwokerto" },
-  secondary: { src: "/img/edu-sti.webp", alt: "Vocational Campus", caption: "Vocational Institute · Network Labs" },
-  leadership1: { src: "/img/explicit.webp", alt: "GDG on Campus Event", caption: "GDG on Campus · Purwokerto" },
-  leadership2: { src: "/gallery/3.jpg", alt: "Programming Club Workshop", caption: "Developer Club · Workshop Session" }
+  primary: { 
+    src: "/images/logos/telkom-university.png", 
+    alt: "Logo Telkom University Purwokerto", 
+    caption: "Telkom University Purwokerto · Official Logo" 
+  },
+  secondary: { 
+    src: "/images/logos/smk-telkom.png", 
+    alt: "Logo SMK Telkom Purwokerto", 
+    caption: "SMK Telkom Purwokerto · Official Logo" 
+  }
 };
 
 /**
