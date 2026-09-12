@@ -14,7 +14,13 @@ function StackToolCard({ tool }) {
       <div className="stack-tool-logo" aria-hidden="true">
         {tool.core && <span className="stack-tool-core-dot" />}
         {tool.logo ? (
-          <img src={tool.logo} alt="" className="stack-tool-logo-img" loading="lazy" decoding="async" />
+          <img 
+            src={tool.logo} 
+            alt={tool.name} 
+            className={`stack-tool-logo-img ${tool.monochrome ? 'stack-tool-logo-img--monochrome' : ''}`} 
+            loading="lazy" 
+            decoding="async" 
+          />
         ) : (
           <span className="stack-tool-initial">{tool.name.charAt(0).toUpperCase()}</span>
         )}
@@ -84,6 +90,9 @@ export default function Stack({ fullPage = false, onNavigate }) {
   // Preview Mode for Home / About Me
   if (!fullPage) {
     const previewTools = Array.from(coreTechSet);
+    const allToolsMap = new Map(
+      techCategories.flatMap((c) => c.tools).map((t) => [t.name, t])
+    );
 
     return (
       <section className="about-section story-panel" id="stack">
@@ -104,11 +113,23 @@ export default function Stack({ fullPage = false, onNavigate }) {
 
           <div className="tech-list">
             <div className="tech-category-items">
-              {previewTools.map((tech) => (
-                <span key={tech} className="tech-item tech-item-core">
-                  {tech}
-                </span>
-              ))}
+              {previewTools.map((tech) => {
+                const toolData = allToolsMap.get(tech);
+                return (
+                  <span key={tech} className="tech-item tech-item-core">
+                    {toolData?.logo && (
+                      <img 
+                        src={toolData.logo} 
+                        alt="" 
+                        className={`tech-item-logo ${toolData.monochrome ? 'tech-item-logo--monochrome' : ''}`} 
+                        loading="lazy" 
+                        decoding="async" 
+                      />
+                    )}
+                    {tech}
+                  </span>
+                );
+              })}
               <button 
                 type="button" 
                 className="tech-item tech-item-more"
@@ -122,6 +143,13 @@ export default function Stack({ fullPage = false, onNavigate }) {
       </section>
     );
   }
+
+  const exploringLogos = {
+    'Go': '/images/logos/go.svg',
+    'WebAssembly': '/images/logos/webassembly.svg',
+    'Tauri 2.0': '/images/logos/tauri.svg',
+    'SurrealQL': '/images/logos/surrealdb.svg'
+  };
 
   // Full Standalone Toolbox Page
   return (
@@ -175,6 +203,15 @@ export default function Stack({ fullPage = false, onNavigate }) {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
               >
+                {exploringLogos[tool] && (
+                  <img 
+                    src={exploringLogos[tool]} 
+                    alt="" 
+                    className="stack-exploring-logo" 
+                    loading="lazy" 
+                    decoding="async" 
+                  />
+                )}
                 {tool}
               </motion.span>
             ))}

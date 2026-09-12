@@ -403,14 +403,14 @@ export const techCategories = [
     name: "Frontend",
     note: "Tools I reach for when crafting fluid, responsive, and accessible user interfaces.",
     tools: [
-      { name: "React", role: "UI library", note: "Component-driven interfaces and interactive web experiences.", projects: ["SmartRMJ", "3D-Portfolio"], core: true, logo: "/images/logos/react.png" },
-      { name: "SolidJS", role: "reactive library", note: "Fine-grained reactive UI with zero virtual DOM overhead.", projects: ["SmartGuard"], core: true },
-      { name: "TypeScript", role: "typed javascript", note: "Type-safe code that scales across the whole stack.", projects: ["SmartRMJ", "SmartGuard"], core: true },
-      { name: "Next.js", role: "react framework", note: "Full-stack React apps with SSR, routing, and performance built in.", projects: ["Portfolio"], core: true },
-      { name: "Three.js", role: "3D web graphics", note: "Interactive 3D WebGL scenes and interactive canvas animations.", projects: ["3D-Portfolio"], core: false, logo: "/images/logos/three.png" },
-      { name: "Tailwind CSS", role: "css framework", note: "Rapid, consistent styling with utility-first CSS.", projects: ["SmartRMJ"], core: false },
-      { name: "AG Grid", role: "data grid", note: "High-performance enterprise table rendering and filtering.", projects: ["SmartRMJ"], core: false },
-      { name: "MapLibre GL", role: "geospatial maps", note: "Interactive vector maps for real-time asset tracing.", projects: ["SmartGuard"], core: false }
+      { name: "React", role: "UI library", note: "Component-driven interfaces and interactive web experiences.", projects: ["SmartRMJ", "3D-Portfolio"], core: true, logo: "/images/logos/react.svg" },
+      { name: "SolidJS", role: "reactive library", note: "Fine-grained reactive UI with zero virtual DOM overhead.", projects: ["SmartGuard"], core: true, logo: "/images/logos/solidjs.svg" },
+      { name: "TypeScript", role: "typed javascript", note: "Type-safe code that scales across the whole stack.", projects: ["SmartRMJ", "SmartGuard"], core: true, logo: "/images/logos/typescript.svg" },
+      { name: "Next.js", role: "react framework", note: "Full-stack React apps with SSR, routing, and performance built in.", projects: ["Portfolio"], core: true, logo: "/images/logos/nextjs.svg", monochrome: true },
+      { name: "Three.js", role: "3D web graphics", note: "Interactive 3D WebGL scenes and interactive canvas animations.", projects: ["3D-Portfolio"], core: false, logo: "/images/logos/threejs.svg", monochrome: true },
+      { name: "Tailwind CSS", role: "css framework", note: "Rapid, consistent styling with utility-first CSS.", projects: ["SmartRMJ"], core: false, logo: "/images/logos/tailwindcss.svg" },
+      { name: "AG Grid", role: "data grid", note: "High-performance enterprise table rendering and filtering.", projects: ["SmartRMJ"], core: false, logo: "/images/logos/aggrid.svg" },
+      { name: "MapLibre GL", role: "geospatial maps", note: "Interactive vector maps for real-time asset tracing.", projects: ["SmartGuard"], core: false, logo: "/images/logos/maplibre.svg" }
     ]
   },
   {
@@ -418,13 +418,13 @@ export const techCategories = [
     name: "Backend & Systems",
     note: "High-throughput servers, microservices, and reliable data pipelines.",
     tools: [
-      { name: "Rust", role: "systems language", note: "Blazing fast, memory-safe backend services and tooling.", projects: ["SmartRMJ", "SmartGuard", "WFM IOAN"], core: true },
-      { name: "Actix-Web", role: "rust web framework", note: "Extremely fast, concurrent HTTP server for microservices.", projects: ["SmartGuard"], core: true },
-      { name: "PostgreSQL", role: "relational database", note: "Battle-tested relational database for complex queries.", projects: ["WFM IOAN"], core: true },
-      { name: "SurrealDB", role: "multi-model database", note: "Graph, document, and relational database with live queries.", projects: ["SmartRMJ"], core: true },
-      { name: "Node.js", role: "runtime", note: "JavaScript outside the browser — APIs, tooling, and scripts.", projects: ["Portfolio", "3D-Portfolio"], core: false, logo: "/images/logos/node.png" },
+      { name: "Rust", role: "systems language", note: "Blazing fast, memory-safe backend services and tooling.", projects: ["SmartRMJ", "SmartGuard", "WFM IOAN"], core: true, logo: "/images/logos/rust.svg", monochrome: true },
+      { name: "Actix-Web", role: "rust web framework", note: "Extremely fast, concurrent HTTP server for microservices.", projects: ["SmartGuard"], core: true, logo: "/images/logos/actix.svg", monochrome: true },
+      { name: "PostgreSQL", role: "relational database", note: "Battle-tested relational database for complex queries.", projects: ["WFM IOAN"], core: true, logo: "/images/logos/postgresql.svg" },
+      { name: "SurrealDB", role: "multi-model database", note: "Graph, document, and relational database with live queries.", projects: ["SmartRMJ"], core: true, logo: "/images/logos/surrealdb.svg" },
+      { name: "Node.js", role: "runtime", note: "JavaScript outside the browser — APIs, tooling, and scripts.", projects: ["Portfolio", "3D-Portfolio"], core: false, logo: "/images/logos/nodejs.svg" },
       { name: "Python", role: "scripting & data", note: "Automation scripts, data scraping, and backend services.", projects: [], core: false, logo: "/images/logos/python.svg" },
-      { name: "Express", role: "node framework", note: "Minimal, flexible server-side routing and middleware.", projects: [], core: false }
+      { name: "Express", role: "node framework", note: "Minimal, flexible server-side routing and middleware.", projects: [], core: false, logo: "/images/logos/express.svg", monochrome: true }
     ]
   },
   {
@@ -432,11 +432,11 @@ export const techCategories = [
     name: "DevOps & Cloud",
     note: "How I package, ship, and scale software with confidence.",
     tools: [
-      { name: "Docker", role: "containers", note: "Reproducible environments that run identically everywhere.", projects: ["WFM IOAN"], core: true },
+      { name: "Docker", role: "containers", note: "Reproducible environments that run identically everywhere.", projects: ["WFM IOAN"], core: true, logo: "/images/logos/docker.svg" },
       { name: "Git", role: "version control", note: "The foundation of every project I build — history I can trust.", projects: ["All Projects"], core: true, logo: "/images/logos/git.svg" },
-      { name: "GitHub", role: "collaboration", note: "Where I host, review, and ship code with others.", projects: ["All Projects"], core: true },
-      { name: "GitHub Actions", role: "ci/cd", note: "Automated builds, tests, and deployments on push.", projects: ["SmartRMJ"], core: false },
-      { name: "Vercel", role: "deployment", note: "Zero-config deployment platform for modern web apps.", projects: ["Portfolio"], core: true }
+      { name: "GitHub", role: "collaboration", note: "Where I host, review, and ship code with others.", projects: ["All Projects"], core: true, logo: "/images/logos/github.svg", monochrome: true },
+      { name: "GitHub Actions", role: "ci/cd", note: "Automated builds, tests, and deployments on push.", projects: ["SmartRMJ"], core: false, logo: "/images/logos/githubactions.svg" },
+      { name: "Vercel", role: "deployment", note: "Zero-config deployment platform for modern web apps.", projects: ["Portfolio"], core: true, logo: "/images/logos/vercel.svg", monochrome: true }
     ]
   },
   {
@@ -444,10 +444,10 @@ export const techCategories = [
     name: "Developer Tools",
     note: "Everyday tools and workflows that shape productivity.",
     tools: [
-      { name: "Visual Studio Code", role: "editor", note: "Primary editor tailored with custom keybindings and plugins.", projects: [], core: false },
-      { name: "Postman", role: "api testing", note: "Exploring, testing, and verifying HTTP endpoints.", projects: [], core: false },
-      { name: "Figma", role: "design tool", note: "Designing interfaces, prototypes, and user flows.", projects: [], core: false },
-      { name: "pnpm / npm", role: "package manager", note: "Fast, disk-efficient dependency management.", projects: [], core: false }
+      { name: "Visual Studio Code", role: "editor", note: "Primary editor tailored with custom keybindings and plugins.", projects: [], core: false, logo: "/images/logos/vscode.svg" },
+      { name: "Postman", role: "api testing", note: "Exploring, testing, and verifying HTTP endpoints.", projects: [], core: false, logo: "/images/logos/postman.svg" },
+      { name: "Figma", role: "design tool", note: "Designing interfaces, prototypes, and user flows.", projects: [], core: false, logo: "/images/logos/figma.svg" },
+      { name: "pnpm / npm", role: "package manager", note: "Fast, disk-efficient dependency management.", projects: [], core: false, logo: "/images/logos/pnpm.svg" }
     ]
   }
 ];
