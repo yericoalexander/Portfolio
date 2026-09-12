@@ -13,9 +13,6 @@
 .stack-tool-logo{color:var(--text-primary)}
 .stack-tool-logo-img{color:var(--text-primary);fill:currentColor}
 
-.campus-logo-frame{aspect-ratio:16/10!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#ffffff!important;padding:clamp(1.5rem,3.5vw,2.5rem)!important;border:1px solid var(--border-medium)!important;border-radius:20px!important;box-shadow:0 10px 30px rgba(0,0,0,.12)!important;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease!important}
-.campus-logo-img{max-width:82%!important;max-height:82%!important;width:auto!important;height:auto!important;object-fit:contain!important;filter:drop-shadow(0 2px 8px rgba(0,0,0,.06))!important;transition:transform .5s cubic-bezier(.22,1,.36,1)!important}
-.campus-photo-frame:hover .campus-logo-img{transform:scale(1.06)!important}
 .campus-leadership-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.75rem;margin-top:1.5rem}
 .campus-lead--card{display:flex!important;flex-direction:column!important;padding:clamp(1.75rem,3vw,2.5rem)!important;border-radius:20px!important;border:1px solid var(--border-medium)!important;background:var(--bg-surface)!important;box-shadow:var(--shadow-card)!important;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .3s ease,box-shadow .35s ease!important;height:100%!important;text-align:left}
 .campus-lead--card:hover{transform:translateY(-4px)!important;border-color:var(--border-strong)!important;box-shadow:var(--shadow-card-hover)!important}
@@ -26,14 +23,20 @@
 .campus-lead--card .campus-org{margin:0 0 1rem 0!important;font-family:var(--font-sans)!important;font-size:var(--text-base)!important;color:var(--text-secondary)!important;font-weight:500!important}
 .campus-lead--card .campus-lead-intro{margin:0 0 1.25rem 0!important;font-size:var(--text-base)!important;color:var(--text-secondary)!important;line-height:1.6!important}
 
-.campus-edu--hero{grid-template-columns:minmax(0,1fr) minmax(0,260px)!important}
-.campus-edu--secondary{grid-template-columns:minmax(0,1fr) minmax(0,260px)!important}
-.campus-logo-frame{aspect-ratio:16/11!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#ffffff!important;padding:1.25rem 1.5rem!important;border:1px solid var(--border-medium)!important;border-radius:20px!important;box-shadow:0 12px 36px rgba(0,0,0,.14)!important;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease!important}
-.campus-logo-img{width:100%!important;height:100%!important;max-width:92%!important;max-height:92%!important;object-fit:contain!important;transition:transform .5s cubic-bezier(.22,1,.36,1)!important}
-.campus-logo-frame:hover{transform:translateY(-3px)!important;box-shadow:0 18px 44px rgba(0,0,0,.2)!important}
-.campus-logo-frame:hover .campus-logo-img{transform:scale(1.05)!important}
+.campus-edu--hero,
+.campus-edu--secondary{grid-template-columns:minmax(0,1fr) minmax(0,270px)!important;gap:clamp(2rem,4vw,3.5rem)!important;align-items:center!important}
+.campus-school{margin:0!important;font-family:var(--font-display)!important;font-size:clamp(2rem,4vw,3.2rem)!important;line-height:1.08!important;letter-spacing:var(--tracking-heading)!important;color:var(--text-primary)!important;text-transform:uppercase!important}
+.campus-logo-frame{aspect-ratio:16/10!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#ffffff!important;padding:1.25rem 1.75rem!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:18px!important;box-shadow:0 12px 32px rgba(0,0,0,.35)!important;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease!important}
+.light-theme .campus-logo-frame{border:1px solid var(--border-medium)!important;box-shadow:0 8px 24px rgba(0,0,0,.08)!important}
+.campus-logo-img{width:100%!important;height:100%!important;max-width:84%!important;max-height:66%!important;object-fit:contain!important;transition:transform .4s cubic-bezier(.22,1,.36,1)!important}
+.campus-logo-frame:hover{transform:translateY(-3px)!important;box-shadow:0 18px 44px rgba(0,0,0,.45)!important}
+.light-theme .campus-logo-frame:hover{box-shadow:0 14px 32px rgba(0,0,0,.14)!important}
+.campus-logo-frame:hover .campus-logo-img{transform:scale(1.04)!important}
+.campus-photo-caption{margin-top:.75rem!important;font-family:var(--font-sans)!important;font-size:.74rem!important;font-weight:500!important;letter-spacing:.02em!important;color:var(--text-muted)!important;text-align:center!important}
+
 @media(max-width:720px){
-  .campus-edu--hero,.campus-edu--secondary{grid-template-columns:1fr!important}
-  .campus-edu--hero .campus-edu-photo,.campus-edu--secondary .campus-edu-photo{order:1!important;max-width:240px;margin-inline:auto}
+  .campus-edu--hero,.campus-edu--secondary{grid-template-columns:1fr!important;gap:1.75rem!important}
+  .campus-edu--hero .campus-edu-photo,.campus-edu--secondary .campus-edu-photo{order:1!important;max-width:250px!important;margin-inline:auto!important}
   .campus-edu--hero .campus-edu-copy,.campus-edu--secondary .campus-edu-copy{order:2!important}
 }
+
