@@ -13,7 +13,11 @@ function StackToolCard({ tool }) {
     >
       <div className="stack-tool-logo" aria-hidden="true">
         {tool.core && <span className="stack-tool-core-dot" />}
-        <span className="stack-tool-initial">{tool.name.charAt(0).toUpperCase()}</span>
+        {tool.logo ? (
+          <img src={tool.logo} alt="" className="stack-tool-logo-img" loading="lazy" decoding="async" />
+        ) : (
+          <span className="stack-tool-initial">{tool.name.charAt(0).toUpperCase()}</span>
+        )}
       </div>
 
       <div className="stack-tool-main">

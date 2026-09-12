@@ -14,7 +14,7 @@ export const personalInfo = {
   role: "Software Developer",
   headline: "Full-Stack Software Engineer building products that bridge creativity and impact.",
   bio: "Software Developer specializing in React, SolidJS, TypeScript, and Rust building high-reliability enterprise systems, real-time analytics dashboards, and scalable architectures.",
-  avatar: "/me.webp",
+  avatar: "/images/profile.webp",
   avatarCaption: "react · rust · typescript",
   email: "yericoalexander12@gmail.com",
   githubUsername: "yericoalexander",
@@ -69,16 +69,16 @@ export const featuredProjects = [
     tags: ["SolidJS", "TypeScript", "Rust (Actix)", "MapLibre GL"]
   },
   {
-    id: "sikhai",
-    slug: "wfm-ioan",
-    title: "WFM IOAN",
-    sub: "Technician Scheduling & KPI Backend",
-    btnText: "View WFM IOAN",
-    icon: "/props/sikhai.webp",
-    mockup1: "/props/sikhai-mockup1.webp",
-    mockup2: "/props/sikhai-mockup2.webp",
-    link: "https://github.com/yericoalexander",
-    tags: ["Rust", "Docker", "REST API", "PostgreSQL"]
+    id: "traveler",
+    slug: "traveler-platform",
+    title: "Traveler Platform",
+    sub: "Staycation & Tourism Web Platform",
+    btnText: "View Traveler",
+    icon: "/images/logo1.png",
+    mockup1: "/images/project-new-1.webp",
+    mockup2: "/images/project1.webp",
+    link: "https://yericoalexander.github.io/Travel-Website/",
+    tags: ["JavaScript", "Bootstrap", "HTML5", "CSS3"]
   }
 ];
 
@@ -124,6 +124,60 @@ export const allProjects = [
       "/img/projects/envirotrace/2.png",
       "/img/projects/envirotrace/3.png",
       "/img/projects/envirotrace/4.png"
+    ]
+  },
+  {
+    slug: "traveler-platform",
+    title: "Traveler Platform",
+    description: "Modern staycation & vacation tour discovery platform",
+    longDescription: "A comprehensive travel platform featuring trip management, vacation booking, staycation discovery, and secure checkout processing. Built with modern web technologies and clean responsive design.",
+    highlights: ["JavaScript", "Bootstrap", "HTML5", "CSS3", "Responsive UI"],
+    links: {
+      live: "https://yericoalexander.github.io/Travel-Website/",
+      code: "https://github.com/yericoalexander/Travel-Website"
+    },
+    icon: "/images/logo1.png",
+    banner: "/images/project-new-1.webp",
+    preview: { logo: "/images/logo1.png" },
+    gallery: [
+      "/images/project-new-1.webp",
+      "/images/project1.webp"
+    ]
+  },
+  {
+    slug: "pharmix",
+    title: "Pharmix App",
+    description: "Healthcare services & online pharmacy web application",
+    longDescription: "Pharmix is a specialized health service application designed to provide easy access to medicines and verified health articles. Features real-time stock updates, order tracking, and intuitive mobile-friendly interfaces.",
+    highlights: ["JavaScript", "Bootstrap", "HTML5", "CSS3", "Healthcare"],
+    links: {
+      live: "https://yericoalexander.github.io/pharmix/",
+      code: "https://github.com/yericoalexander/pharmix"
+    },
+    icon: "/images/logo2.png",
+    banner: "/images/project-new-2.webp",
+    preview: { logo: "/images/logo2.png" },
+    gallery: [
+      "/images/project-new-2.webp",
+      "/images/project2.webp"
+    ]
+  },
+  {
+    slug: "furniture-store",
+    title: "E-commerce Furniture",
+    description: "Modern interior & online furniture store platform",
+    longDescription: "An advanced e-commerce platform for furniture shopping featuring product filtering, interactive cart checkout, user reviews, order tracking, and intuitive responsive design.",
+    highlights: ["JavaScript", "Bootstrap", "HTML5", "CSS3", "E-Commerce"],
+    links: {
+      live: "https://yericoalexander.github.io/Toko-Online-Furniture/",
+      code: "https://github.com/yericoalexander/Toko-Online-Furniture"
+    },
+    icon: "/images/logo3.png",
+    banner: "/images/project-new-3.webp",
+    preview: { logo: "/images/logo3.png" },
+    gallery: [
+      "/images/project-new-3.webp",
+      "/images/project3.webp"
     ]
   },
   {
@@ -191,11 +245,25 @@ export const experiences = [
     highlights: ["React", "SolidJS", "TypeScript", "Rust", "SurrealDB", "Docker"]
   },
   {
+    role: "SolidJS Developer",
+    company: "Appwrite Ecosystem",
+    period: "April 2025 — Aug 2025",
+    description: "Built high-performance cross-platform applications using SolidJS, integrating with Appwrite backend services. Improved application performance and user experience through aggressive code optimization and comprehensive unit testing.",
+    highlights: ["SolidJS", "TypeScript", "Appwrite", "Mobile Optimization"]
+  },
+  {
     role: "Software Developer Intern",
     company: "Atase Perdagangan Canberra",
     period: "July 2024 — Nov 2024",
     description: "Built bilateral trade analytics dashboards and document management portals. Automated trade statistical exports and visual reporting using modern web technologies and secure API endpoints.",
     highlights: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind CSS", "REST API"]
+  },
+  {
+    role: "Wordpress Developer",
+    company: "Freelance & Open Source",
+    period: "June 2024 — Nov 2024",
+    description: "Led development and customization of responsive web applications and custom themes. Integrated REST APIs seamlessly with frontend interfaces and optimized caching for superior load speeds.",
+    highlights: ["WordPress", "PHP", "JavaScript", "REST API", "SEO"]
   }
 ];
 
@@ -335,10 +403,11 @@ export const techCategories = [
     name: "Frontend",
     note: "Tools I reach for when crafting fluid, responsive, and accessible user interfaces.",
     tools: [
-      { name: "React", role: "UI library", note: "Component-driven interfaces and interactive web experiences.", projects: ["SmartRMJ"], core: true },
+      { name: "React", role: "UI library", note: "Component-driven interfaces and interactive web experiences.", projects: ["SmartRMJ", "3D-Portfolio"], core: true, logo: "/images/logos/react.png" },
       { name: "SolidJS", role: "reactive library", note: "Fine-grained reactive UI with zero virtual DOM overhead.", projects: ["SmartGuard"], core: true },
       { name: "TypeScript", role: "typed javascript", note: "Type-safe code that scales across the whole stack.", projects: ["SmartRMJ", "SmartGuard"], core: true },
       { name: "Next.js", role: "react framework", note: "Full-stack React apps with SSR, routing, and performance built in.", projects: ["Portfolio"], core: true },
+      { name: "Three.js", role: "3D web graphics", note: "Interactive 3D WebGL scenes and interactive canvas animations.", projects: ["3D-Portfolio"], core: false, logo: "/images/logos/three.png" },
       { name: "Tailwind CSS", role: "css framework", note: "Rapid, consistent styling with utility-first CSS.", projects: ["SmartRMJ"], core: false },
       { name: "AG Grid", role: "data grid", note: "High-performance enterprise table rendering and filtering.", projects: ["SmartRMJ"], core: false },
       { name: "MapLibre GL", role: "geospatial maps", note: "Interactive vector maps for real-time asset tracing.", projects: ["SmartGuard"], core: false }
@@ -353,7 +422,8 @@ export const techCategories = [
       { name: "Actix-Web", role: "rust web framework", note: "Extremely fast, concurrent HTTP server for microservices.", projects: ["SmartGuard"], core: true },
       { name: "PostgreSQL", role: "relational database", note: "Battle-tested relational database for complex queries.", projects: ["WFM IOAN"], core: true },
       { name: "SurrealDB", role: "multi-model database", note: "Graph, document, and relational database with live queries.", projects: ["SmartRMJ"], core: true },
-      { name: "Node.js", role: "runtime", note: "JavaScript outside the browser — APIs, tooling, and scripts.", projects: ["Portfolio"], core: false },
+      { name: "Node.js", role: "runtime", note: "JavaScript outside the browser — APIs, tooling, and scripts.", projects: ["Portfolio", "3D-Portfolio"], core: false, logo: "/images/logos/node.png" },
+      { name: "Python", role: "scripting & data", note: "Automation scripts, data scraping, and backend services.", projects: [], core: false, logo: "/images/logos/python.svg" },
       { name: "Express", role: "node framework", note: "Minimal, flexible server-side routing and middleware.", projects: [], core: false }
     ]
   },
@@ -363,7 +433,7 @@ export const techCategories = [
     note: "How I package, ship, and scale software with confidence.",
     tools: [
       { name: "Docker", role: "containers", note: "Reproducible environments that run identically everywhere.", projects: ["WFM IOAN"], core: true },
-      { name: "Git", role: "version control", note: "The foundation of every project I build — history I can trust.", projects: ["All Projects"], core: true },
+      { name: "Git", role: "version control", note: "The foundation of every project I build — history I can trust.", projects: ["All Projects"], core: true, logo: "/images/logos/git.svg" },
       { name: "GitHub", role: "collaboration", note: "Where I host, review, and ship code with others.", projects: ["All Projects"], core: true },
       { name: "GitHub Actions", role: "ci/cd", note: "Automated builds, tests, and deployments on push.", projects: ["SmartRMJ"], core: false },
       { name: "Vercel", role: "deployment", note: "Zero-config deployment platform for modern web apps.", projects: ["Portfolio"], core: true }
